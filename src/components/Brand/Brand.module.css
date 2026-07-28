@@ -1,0 +1,30 @@
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  text-decoration: none;
+  color: var(--text);
+}
+
+.mark {
+  width: 44px;
+  height: 44px;
+  flex: none;
+  background: url('@/assets/rabbit.png') center / contain no-repeat;
+  transition: transform var(--dur) var(--ease);
+}
+
+.brand:hover .mark {
+  transform: translateY(-1px) scale(1.04);
+}
+
+.name {
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.name b {
+  color: var(--accent);
+  font-weight: 800;
+}

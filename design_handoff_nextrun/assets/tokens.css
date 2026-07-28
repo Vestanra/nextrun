@@ -1,0 +1,148 @@
+/* ============================================================================
+   STRIDE — Design Tokens
+   ----------------------------------------------------------------------------
+   Single source of truth for the visual language. In the React/Vite project
+   this file becomes `src/styles/tokens.css` (per SPEC §2) and every value is
+   referenced via var(--token). Change a value here → it propagates everywhere,
+   in this mockup AND in the reproduced code.
+
+   Theme: Premium minimal — warm charcoal + warm yellow accent.
+   Two themes are provided via [data-theme]:
+     - charcoal (default)  → warm near-black, soft contrast, "expensive"
+     - blackout (contrast) → true black, higher contrast, punchier
+   The Tweaks panel toggles [data-theme] on <html>.
+   ============================================================================ */
+
+:root,
+[data-theme="charcoal"] {
+  /* ---- Brand accent -------------------------------------------------------
+     Warm yellow. Used sparingly: price, focus, the single primary CTA. */
+  --accent:        #f5d90a;   /* warm yellow */
+  --accent-strong: #ffe24d;   /* hover / brighter */
+  --accent-ink:    #15140f;   /* text that sits ON the accent (near-black) */
+  --err:           #ff6b6b;   /* form validation errors */
+
+  /* ---- Surfaces (warm charcoal ladder) ----------------------------------- */
+  --bg:        #100f0d;   /* page background — warm near-black */
+  --surface:   #1a1916;   /* card background */
+  --surface-2: #232118;   /* raised / hovered card, inputs on hover */
+  --surface-3: #2d2a20;   /* chips, subtle fills */
+
+  /* ---- Lines & strokes ---------------------------------------------------- */
+  --border:        rgba(245, 240, 222, 0.10);  /* hairline on surfaces */
+  --border-strong: rgba(245, 240, 222, 0.18);  /* hover / focus ring base */
+
+  /* ---- Text (warm neutrals) ---------------------------------------------- */
+  --text:        #f4f1e8;   /* primary — warm white */
+  --text-muted:  #a8a293;   /* secondary — warm gray */
+  --text-faint:  #6f6a5d;   /* tertiary — labels, meta icons */
+
+  /* ---- Image treatment ---------------------------------------------------- */
+  --img-filter:        grayscale(0.28) contrast(1.04) brightness(0.94);
+  --img-filter-hover:  grayscale(0)    contrast(1.05) brightness(1);
+  --img-overlay: linear-gradient(180deg, rgba(16,15,13,0) 38%, rgba(16,15,13,0.55) 100%);
+}
+
+[data-theme="light"] {
+  --accent:        #1e1c12;
+  --accent-strong: #363320;
+  --accent-ink:    #f5f0dc;
+  --err:           #c0392b;
+
+  --bg:        #faf8f2;
+  --surface:   #f3f0e6;
+  --surface-2: #ede9d8;
+  --surface-3: #e6e1cc;
+
+  --border:        rgba(30, 28, 18, 0.09);
+  --border-strong: rgba(30, 28, 18, 0.18);
+
+  --text:        #1a1916;
+  --text-muted:  #6b6559;
+  --text-faint:  #a39d8e;
+
+  --img-filter:        grayscale(0.08) contrast(1.02);
+  --img-filter-hover:  grayscale(0)    contrast(1.03);
+  --img-overlay: linear-gradient(180deg, rgba(250,248,242,0) 38%, rgba(250,248,242,0.25) 100%);
+
+  --shadow-1: 0 1px 0 rgba(255,255,255,0.7) inset, 0 4px 16px rgba(30,28,18,0.08);
+  --shadow-2: 0 1px 0 rgba(255,255,255,0.9) inset, 0 12px 32px rgba(30,28,18,0.12);
+}
+
+[data-theme="dusk"] {
+  --accent:        #f5d90a;
+  --accent-strong: #ffe24d;
+  --accent-ink:    #15140f;
+  --err:           #ff6b6b;
+
+  --bg:        #3d3822;
+  --surface:   #48422a;
+  --surface-2: #544d33;
+  --surface-3: #60573c;
+
+  --border:        rgba(245, 240, 222, 0.12);
+  --border-strong: rgba(245, 240, 222, 0.22);
+
+  --text:        #f4f1e8;
+  --text-muted:  #c4ba9e;
+  --text-faint:  #8c8470;
+
+  --img-filter:        grayscale(0.18) contrast(1.03) brightness(0.96);
+  --img-filter-hover:  grayscale(0)    contrast(1.04) brightness(1);
+  --img-overlay: linear-gradient(180deg, rgba(61,56,34,0) 38%, rgba(61,56,34,0.55) 100%);
+
+  --shadow-1: 0 1px 0 rgba(255,255,255,0.03) inset, 0 8px 24px rgba(0,0,0,0.28);
+  --shadow-2: 0 1px 0 rgba(255,255,255,0.05) inset, 0 20px 48px rgba(0,0,0,0.38);
+}
+
+:root {
+  /* ---- Typography --------------------------------------------------------
+     Classic neutral grotesque. One family across the UI for cohesion.
+     `Hanken Grotesk` is the chosen grotesque; system grotesks fall back. */
+  --font-sans: "Hanken Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  /* Type scale (desktop). Line-heights tuned per role. */
+  --fs-display: clamp(2.6rem, 4.4vw, 4rem);   /* H1 "All Events You've Got"   */
+  --fs-h2:      clamp(1.5rem, 2.2vw, 2rem);    /* card titles / section heads */
+  --fs-h3:      1.1875rem;                      /* 19px */
+  --fs-body:    1rem;                           /* 16px */
+  --fs-sm:      0.875rem;                        /* 14px meta */
+  --fs-xs:      0.75rem;                          /* 12px eyebrow / labels */
+
+  --lh-tight: 1.05;
+  --lh-snug:  1.2;
+  --lh-body:  1.55;
+
+  --ls-eyebrow: 0.28em;   /* letter-spacing for ALL-CAPS eyebrows */
+  --ls-tight:  -0.02em;
+
+  /* ---- Spacing scale (4px base) ------------------------------------------ */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  /* ---- Radii (standardized: sm / md / lg / pill / circle) ---------------- */
+  --radius-sm:     8px;
+  --radius-md:     14px;   /* cards */
+  --radius-lg:     22px;
+  --radius-pill:   999px;  /* buttons, search, chips */
+  --radius-circle: 50%;
+
+  /* ---- Shadows (two levels only) ----------------------------------------- */
+  --shadow-1: 0 1px 0 rgba(255,255,255,0.02) inset, 0 8px 24px rgba(0,0,0,0.35);
+  --shadow-2: 0 1px 0 rgba(255,255,255,0.04) inset, 0 20px 48px rgba(0,0,0,0.5);
+
+  /* ---- Layout ------------------------------------------------------------- */
+  --container:  1240px;
+  --gutter:     clamp(20px, 4vw, 56px);
+
+  /* ---- Motion ------------------------------------------------------------- */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur:  0.28s;
+}

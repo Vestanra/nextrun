@@ -1,0 +1,103 @@
+:root {
+  /* ---- Brand accent -------------------------------------------------------- */
+  --accent:        #f5d90a;
+  --accent-strong: #ffe24d;
+  --accent-ink:    #15140f;
+  --err:           #ff6b6b;
+
+  /* ---- Surfaces ------------------------------------------------------------ */
+  --bg:        #100f0d;
+  --surface:   #1a1916;
+  --surface-2: #232118;
+  --surface-3: #2d2a20;
+
+  /* ---- Lines & strokes ----------------------------------------------------- */
+  --border:        rgba(245, 240, 222, 0.10);
+  --border-strong: rgba(245, 240, 222, 0.18);
+
+  /* ---- Text ---------------------------------------------------------------- */
+  --text:        #f4f1e8;
+  --text-muted:  #a8a293;
+  --text-faint:  #6f6a5d;
+
+  /* ---- Image treatment ----------------------------------------------------- */
+  --img-filter:       grayscale(0.28) contrast(1.04) brightness(0.94);
+  --img-filter-hover: grayscale(0)    contrast(1.05) brightness(1);
+  --img-overlay:      linear-gradient(180deg, rgba(16,15,13,0) 38%, rgba(16,15,13,0.55) 100%);
+
+  /* ---- Typography ---------------------------------------------------------- */
+  --font-sans:  "Hanken Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  --fs-display: clamp(2.6rem, 4.4vw, 4rem);
+  --fs-h2:      clamp(1.5rem, 2.2vw, 2rem);
+  --fs-h3:      1.1875rem;
+  --fs-body:    1rem;
+  --fs-sm:      0.875rem;
+  --fs-xs:      0.75rem;
+
+  --lh-tight: 1.05;
+  --lh-snug:  1.2;
+  --lh-body:  1.55;
+
+  --ls-eyebrow: 0.28em;
+  --ls-tight:  -0.02em;
+
+  /* ---- Spacing (4px base) -------------------------------------------------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  /* ---- Radii --------------------------------------------------------------- */
+  --radius-sm:     8px;
+  --radius-md:     14px;
+  --radius-lg:     22px;
+  --radius-pill:   999px;
+  --radius-circle: 50%;
+
+  /* ---- Shadows ------------------------------------------------------------- */
+  --shadow-1: 0 1px 0 rgba(255,255,255,0.02) inset, 0 8px 24px rgba(0,0,0,0.35);
+  --shadow-2: 0 1px 0 rgba(255,255,255,0.04) inset, 0 20px 48px rgba(0,0,0,0.5);
+
+  /* ---- Layout -------------------------------------------------------------- */
+  --container: 1240px;
+  --gutter:    clamp(20px, 4vw, 56px);
+
+  /* ---- Motion -------------------------------------------------------------- */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur:  0.28s;
+}
+
+/* ---- Light theme --------------------------------------------------------- */
+/* Applied when <html data-theme="light">. Overrides only the color tokens;
+   typography, spacing, radii, layout and motion are inherited from :root. */
+[data-theme="light"] {
+  --accent:        #1e1c12;
+  --accent-strong: #363320;
+  --accent-ink:    #f5f0dc;
+  --err:           #c0392b;
+
+  --bg:        #faf8f2;
+  --surface:   #f3f0e6;
+  --surface-2: #ede9d8;
+  --surface-3: #e6e1cc;
+
+  --border:        rgba(30, 28, 18, 0.09);
+  --border-strong: rgba(30, 28, 18, 0.18);
+
+  --text:        #1a1916;
+  --text-muted:  #6b6559;
+  --text-faint:  #a39d8e;
+
+  --img-filter:       grayscale(0.08) contrast(1.02);
+  --img-filter-hover: grayscale(0)    contrast(1.03);
+  --img-overlay:      linear-gradient(180deg, rgba(250,248,242,0) 38%, rgba(250,248,242,0.25) 100%);
+
+  --shadow-1: 0 1px 0 rgba(255,255,255,0.7) inset, 0 4px 16px rgba(30,28,18,0.08);
+  --shadow-2: 0 1px 0 rgba(255,255,255,0.9) inset, 0 12px 32px rgba(30,28,18,0.12);
+}

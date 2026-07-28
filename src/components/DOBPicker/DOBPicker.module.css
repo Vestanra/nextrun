@@ -1,0 +1,15 @@
+/* Three-up DOB row. Ported from .field-row--dob (assets/screens.css).
+   Stays 3-across on every viewport (per SPEC §5 Story 4 AC), only the column
+   ratio tightens on small widths. */
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  gap: var(--space-4);
+}
+
+@media (max-width: 800px) {
+  .row {
+    grid-template-columns: 1fr 1fr 1.1fr;
+    gap: var(--space-3);
+  }
+}

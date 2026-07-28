@@ -1,0 +1,76 @@
+/* Ported from .field / .input / .select / .field__error (assets/screens.css).
+   The shared .input / .select look + the .inputInvalid / .selectInvalid
+   modifiers are exported here and reused by consumer pages and widgets
+   (PhoneInput, DOBPicker) so the control styling lives in one place. */
+
+.field {
+  margin-bottom: var(--space-5);
+}
+.label {
+  display: block;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: var(--space-2);
+}
+/* Required mark — red per the build instruction (the prototype used accent). */
+.req {
+  color: var(--err);
+}
+.error {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: var(--space-2);
+  font-size: var(--fs-sm);
+  color: var(--err);
+}
+.error svg {
+  width: 14px;
+  height: 14px;
+  flex: none;
+}
+
+.input,
+.select {
+  width: 100%;
+  font: inherit;
+  font-size: var(--fs-body);
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: 14px 20px;
+  outline: none;
+  transition: border-color var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease), background-color var(--dur);
+}
+.input::placeholder {
+  color: var(--text-faint);
+}
+.input:hover {
+  background: var(--surface-2);
+}
+.select:hover {
+  background-color: var(--surface-2);
+}
+.input:focus,
+.select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px color-mix(in oklch, var(--accent) 18%, transparent);
+}
+.inputInvalid,
+.selectInvalid {
+  border-color: var(--err);
+}
+
+/* Custom light chevron (no grey native OS arrow). */
+.select {
+  appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a8a293' stroke-width='2.4' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+  background-size: 16px;
+  padding-right: 44px;
+}

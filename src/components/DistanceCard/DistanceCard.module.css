@@ -1,0 +1,134 @@
+.card {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  cursor: pointer;
+  transition: border-color var(--dur) var(--ease), background var(--dur) var(--ease);
+}
+
+.card:hover {
+  border-color: var(--border-strong);
+}
+
+.card:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px color-mix(in oklch, var(--accent) 22%, transparent);
+}
+
+.card.isSelected {
+  border-color: var(--accent);
+  background: color-mix(in oklch, var(--accent) 8%, var(--surface-2));
+}
+
+.card.isDisabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Top row */
+.top {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+/* Radio dot */
+.radio {
+  width: 22px;
+  height: 22px;
+  flex: none;
+  border-radius: var(--radius-circle);
+  border: 2px solid var(--border-strong);
+  display: grid;
+  place-items: center;
+  transition: border-color var(--dur) var(--ease);
+}
+
+.card:hover .radio {
+  border-color: var(--text-muted);
+}
+
+.card.isSelected .radio {
+  border-color: var(--accent);
+}
+
+.radio::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-circle);
+  background: var(--accent);
+  transform: scale(0);
+  transition: transform var(--dur) var(--ease);
+}
+
+.card.isSelected .radio::after {
+  transform: scale(1);
+}
+
+.name {
+  font-size: var(--fs-body);
+  font-weight: 700;
+  letter-spacing: var(--ls-tight);
+  flex: 1;
+  margin: 0;
+}
+
+.price {
+  font-size: var(--fs-body);
+  font-weight: 800;
+  white-space: nowrap;
+  color: var(--text);
+  transition: color var(--dur) var(--ease);
+}
+
+.card.isSelected .price {
+  color: var(--accent);
+}
+
+/* Km */
+.km {
+  font-size: var(--fs-sm);
+  color: var(--text-faint);
+  font-variant-numeric: tabular-nums;
+  margin: var(--space-2) 0 0 38px;
+}
+
+/* More info toggle */
+.more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: var(--space-3) 0 0 38px;
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--accent);
+  font: inherit;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.01em;
+}
+
+.more svg {
+  width: 13px;
+  height: 13px;
+  transition: transform var(--dur) var(--ease);
+}
+
+.more.isOpen svg {
+  transform: rotate(180deg);
+}
+
+.desc {
+  margin: var(--space-3) 0 0 38px;
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  line-height: var(--lh-body);
+  max-width: 52ch;
+}

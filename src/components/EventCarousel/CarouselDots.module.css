@@ -1,0 +1,28 @@
+.dots {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  .dots {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-2);
+    margin-top: var(--space-5);
+  }
+
+  .dots button {
+    width: 9px;
+    height: 9px;
+    padding: 0;
+    border: none;
+    border-radius: var(--radius-pill);
+    background: var(--surface-3);
+    cursor: pointer;
+    transition: width var(--dur) var(--ease), background var(--dur) var(--ease);
+  }
+
+  .dots button[aria-current="true"] {
+    width: 26px;
+    background: var(--accent);
+  }
+}

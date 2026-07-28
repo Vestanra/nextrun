@@ -1,0 +1,81 @@
+.search {
+  display: flex;
+  align-items: center;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: 6px 6px 6px 22px;
+  width: min(420px, 100%);
+  transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+
+.search:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px color-mix(in oklch, var(--accent) 18%, transparent);
+}
+
+.input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font: inherit;
+  font-size: var(--fs-sm);
+  min-width: 0;
+}
+
+.input::placeholder {
+  color: var(--text-faint);
+}
+
+.clear {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  margin-right: 2px;
+  display: grid;
+  place-items: center;
+  border: none;
+  background: transparent;
+  color: var(--text-faint);
+  cursor: pointer;
+  border-radius: var(--radius-circle);
+  transition: color var(--dur), background var(--dur);
+}
+
+.clear:hover {
+  color: var(--text);
+  background: var(--surface-3);
+}
+
+.clear svg {
+  width: 16px;
+  height: 16px;
+}
+
+.btn {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: var(--radius-pill);
+  background: var(--accent);
+  color: var(--accent-ink);
+  cursor: pointer;
+  transition: background var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+
+.btn:hover { background: var(--accent-strong); }
+.btn:active { transform: scale(0.94); }
+
+.btn svg {
+  width: 19px;
+  height: 19px;
+}
+
+@media (max-width: 600px) {
+  .search { width: 100%; }
+}

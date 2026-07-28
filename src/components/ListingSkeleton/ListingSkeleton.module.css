@@ -1,0 +1,57 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 2.2vw, 32px);
+  margin-top: var(--space-7);
+}
+
+.card {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding-bottom: var(--space-5);
+}
+
+.banner {
+  aspect-ratio: 16 / 11;
+  background: linear-gradient(100deg, var(--surface) 30%, var(--surface-2) 50%, var(--surface) 70%);
+  background-size: 220% 100%;
+  animation: shimmer 1.4s infinite;
+}
+
+.lines {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: 0 var(--space-5);
+}
+
+.line {
+  height: 14px;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(100deg, var(--surface) 30%, var(--surface-2) 50%, var(--surface) 70%);
+  background-size: 220% 100%;
+  animation: shimmer 1.4s infinite;
+}
+
+.lineWide  { width: 80%; }
+.lineMid   { width: 60%; }
+.lineShort { width: 45%; }
+.linePrice { width: 55%; height: 18px; margin-top: var(--space-2); }
+
+@keyframes shimmer {
+  to { background-position: -220% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .banner,
+  .line {
+    animation: none;
+    background: var(--surface-2);
+    background-image: none;
+  }
+}
