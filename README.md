@@ -60,9 +60,11 @@ bundle and regenerate the same app (see *Rebuild from scratch* below).
 
 ```bash
 npm install
-cp .env.example .env   # then set VITE_API_BASE_URL (see INSTRUCTIONS Step 3)
-npm run dev            # http://localhost:5173
+npm run dev            # http://localhost:5173 — works out of the box
 ```
+
+No configuration needed: `npm run dev` runs against bundled static demo data.
+To develop against a real MockAPI backend instead, see [`.env.example`](.env.example).
 
 ### Quality checks
 
@@ -81,18 +83,24 @@ box after observing the outcome in the running app.
 
 ## Rebuild from scratch (the reproducible part)
 
-To regenerate this app from the docs using Claude Code:
+Want to rebuild the app yourself from the docs, the way a mentor would — without
+the finished `src/` spoiling it? Use the **docs-only starter kit**:
 
-1. Start with only the docs bundle in an empty directory: `SPEC.md`,
-   `INSTRUCTIONS.md`, `ACCEPTANCE.md`, `README.md`, and `design_handoff_nextrun/`.
-   Open `design_handoff_nextrun/Events Listing.html` to explore the target design
-   (it replaces Figma as the visual source of truth).
-2. Open Claude Code in that directory and paste:
+1. Download **[`nextrun-starter.zip`](../../releases/latest)** (GitHub Releases) —
+   it contains just `SPEC.md`, `INSTRUCTIONS.md`, `ACCEPTANCE.md`,
+   `design_handoff_nextrun/`, and `.env.example`. **No source code, no secrets.**
+2. Unzip into an empty directory and open `design_handoff_nextrun/Events Listing.html`
+   to explore the target design (it replaces Figma as the visual source of truth).
+3. Open Claude Code in that directory and paste:
 
    > Read INSTRUCTIONS.md. Execute Step 1. After finishing each step, list what I
    > should verify and wait for my confirmation before moving to the next step.
 
-3. Claude works through Steps 1 → 11 sequentially, pausing for sign-off after each.
+4. Claude works through Steps 1 → 11 sequentially, pausing for sign-off after each.
+
+**Backend during reproduction:** you don't need any of the author's keys. Either
+set `VITE_STATIC_DEMO=true` (no backend), or follow INSTRUCTIONS Step 3 *Mode B*
+to seed your own free MockAPI from the provided JSON.
 
 ---
 
