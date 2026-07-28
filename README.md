@@ -8,7 +8,18 @@ another developer from the docs alone.
 **Live demo:** https://vestanra.github.io/nextrun/
 &nbsp;·&nbsp; **Stack:** React 19 · TypeScript · Vite 8 · React Router · React Hook Form · jsPDF · MockAPI
 
-<!-- TODO: add a screenshot or GIF of the app here — recruiters click the demo first, the image second. -->
+![NEXTRUN — events listing](docs/screenshot-listing.png)
+
+<table>
+  <tr>
+    <td width="50%"><img src="docs/screenshot-details.png" alt="Event details with distance selection" /></td>
+    <td width="50%"><img src="docs/screenshot-confirmation.png" alt="Registration confirmation ticket" /></td>
+  </tr>
+  <tr>
+    <td align="center"><em>Event details → pick a distance</em></td>
+    <td align="center"><em>Confirmation → downloadable PDF ticket</em></td>
+  </tr>
+</table>
 
 ---
 
