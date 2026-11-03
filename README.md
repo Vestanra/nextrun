@@ -112,6 +112,7 @@ to seed your own free MockAPI from the provided JSON.
   data** (`VITE_STATIC_DEMO=true`) — the MockAPI free tier is unauthenticated,
   so a live endpoint in a public repo could be wiped by anyone; static data
   keeps the demo tamper-proof. Registrations persist for the session only.
-- **Deployment:** `HashRouter` keeps deep links working on GitHub Pages without
-  server-side route handling; the app is built for the user-site root (`/`).
+- **Deployment:** `BrowserRouter` provides crawlable URLs. The production build
+  generates GitHub Pages entry points for public routes, a sitemap, and a 404
+  SPA fallback; the app is built for the user-site root (`/`).
 - This is a learning project (fictional data), not a real product.

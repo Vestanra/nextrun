@@ -1,8 +1,8 @@
-// HashRouter (not BrowserRouter): GitHub Pages has no server-side routing,
-// so deep links like /events/:id/checkout would 404 on refresh. Hash routing
-// keeps every route client-side while the app is served from the domain root.
-import { HashRouter, Routes, Route } from 'react-router-dom';
+// BrowserRouter provides crawlable URLs. The production build generates real
+// GitHub Pages entry points for public routes plus a 404 SPA fallback.
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AppLayout } from '@/components/AppLayout/AppLayout';
+import PageMeta from '@/components/PageMeta/PageMeta';
 import ScrollToTop from '@/components/ScrollToTop/ScrollToTop';
 import Listing from '@/pages/Listing/Listing';
 import Details from '@/pages/Details/Details';
@@ -12,7 +12,8 @@ import NotFound from '@/pages/NotFound/NotFound';
 
 export default function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
+      <PageMeta />
       <ScrollToTop />
       <AppLayout>
         <Routes>
@@ -24,6 +25,6 @@ export default function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </AppLayout>
-    </HashRouter>
+    </BrowserRouter>
   );
 }

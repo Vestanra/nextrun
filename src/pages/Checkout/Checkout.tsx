@@ -138,7 +138,7 @@ export default function Checkout() {
   const validDistanceId = distanceId && event.distances.some((d) => d.id === distanceId)
     ? distanceId
     : null;
-  if (!validDistanceId) return <Navigate to={`/events/${id}`} replace />;
+  if (!validDistanceId) return <Navigate to={`/events/${id}/`} replace />;
 
   const distance = event.distances.find((d) => d.id === validDistanceId)!;
 
@@ -172,7 +172,7 @@ export default function Checkout() {
 
     try {
       await registerParticipant(event.id, participant);
-      navigate(`/events/${event.id}/confirmation/${participant.id}`);
+      navigate(`/events/${event.id}/confirmation/${participant.id}/`);
     } catch {
       setPageError('Registration failed. Please try again.');
       setSubmitting(false);
