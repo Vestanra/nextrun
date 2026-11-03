@@ -1,6 +1,6 @@
 // HashRouter (not BrowserRouter): GitHub Pages has no server-side routing,
 // so deep links like /events/:id/checkout would 404 on refresh. Hash routing
-// keeps every route client-side and works from the /nextrun/ subpath.
+// keeps every route client-side while the app is served from the domain root.
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import { AppLayout } from '@/components/AppLayout/AppLayout';
 import ScrollToTop from '@/components/ScrollToTop/ScrollToTop';

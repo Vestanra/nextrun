@@ -4,10 +4,8 @@ import path from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
-  // Host-dependent base path:
-  //   - Vercel serves from the domain root ('/'). Vercel sets VERCEL=1 during its build.
-  //   - GitHub Pages serves from https://vestanra.github.io/nextrun/ (the '/nextrun/' subpath).
-  base: process.env.VERCEL ? '/' : '/nextrun/',
+  // The GitHub user site is served from https://vestanra.github.io/.
+  base: '/',
   plugins: [react()],
   resolve: {
     alias: {

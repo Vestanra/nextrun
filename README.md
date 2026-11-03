@@ -5,7 +5,7 @@ A single-page app for browsing running races and registering for them
 through a documented AI workflow** with Claude Code — and reproducible by
 another developer from the docs alone.
 
-**Live demo:** https://vestanra.github.io/nextrun/
+**Live demo:** https://vestanra.github.io/
 &nbsp;·&nbsp; **Stack:** React 19 · TypeScript · Vite 8 · React Router · React Hook Form · jsPDF · MockAPI
 
 ![NEXTRUN — events listing](docs/screenshot-listing.png)
@@ -112,6 +112,6 @@ to seed your own free MockAPI from the provided JSON.
   data** (`VITE_STATIC_DEMO=true`) — the MockAPI free tier is unauthenticated,
   so a live endpoint in a public repo could be wiped by anyone; static data
   keeps the demo tamper-proof. Registrations persist for the session only.
-- **Deployment:** `HashRouter` + `base: '/nextrun/'` are used so deep links work
-  under the GitHub Pages subpath without a server.
+- **Deployment:** `HashRouter` keeps deep links working on GitHub Pages without
+  server-side route handling; the app is built for the user-site root (`/`).
 - This is a learning project (fictional data), not a real product.
