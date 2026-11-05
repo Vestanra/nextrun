@@ -2,7 +2,7 @@
 // Snapshot of the original MockAPI /events resource, bundled so the live demo
 // is self-contained and cannot be wiped/vandalised via the unauthenticated
 // MockAPI free tier. Typed as Event[] so any shape drift fails the build.
-import type { Event } from '../types/event';
+import type { Event } from '@/types/event';
 
 export const demoEvents: Event[] = [
   {

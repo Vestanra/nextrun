@@ -15,7 +15,7 @@ export default function EventCard({ event }: { event: Event }) {
   const d = fmtDate(event.date);
 
   return (
-    <Link to={`/events/${event.id}/`} className={s.card}>
+    <Link to={`/events/${event.id}`} className={s.card}>
       <div className={s.media}>
         {imgOk ? (
           <img

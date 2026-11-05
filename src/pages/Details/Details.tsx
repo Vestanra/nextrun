@@ -113,7 +113,7 @@ export default function Details() {
 
   const handleRegister = () => {
     if (selectedDistanceId) {
-      navigate(`/events/${event.id}/checkout/?distance=${selectedDistanceId}`);
+      navigate(`/events/${event.id}/checkout?distance=${selectedDistanceId}`);
     }
   };
 
